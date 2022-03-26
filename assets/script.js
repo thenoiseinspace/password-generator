@@ -1,5 +1,4 @@
 //setting up variables
-
 var generateBtn = document.querySelector("#generate");
 var lowercaseAlphabet = "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z";
 var uppercaseAlphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z"; 
@@ -7,11 +6,9 @@ var numbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0";
 var symbols = "1, @, #, $, %, ^, &, *, (, ), _, ?. /, ;, :, <, >, [, ], {, },";
 
 //Setting up the way the page looks when it loads
-
 window.onload = alert("Create a secure password! Click the button to begin, then select your parameters to generate your new password.");
 
 //Then the person clicks the button to begin
-
 function beginPasswordCreation(){
   var password = makePassword();
   var passwordText = document.querySelector("#password");
@@ -24,8 +21,7 @@ function makePassword(){
 }
 
 //Asking user to choose parameters
-
-var passwordLength = prompt("How many characters should the password include?")
+var passwordLength = prompt("How many characters should the password include? Select a number between 8 and 128 characters.")
 
 if(passwordLength <8 || passwordLength > 128){
   alert("Select a number between 8 and 128 characters.");
@@ -55,12 +51,9 @@ if(passwordLength <8 || passwordLength > 128){
   }
 }
 
-
 //Making it work on click
 
 generateBtn.addEventListener("click", beginPasswordCreation);
 
+//Calliing the function
 makePassword();
-
-
-
