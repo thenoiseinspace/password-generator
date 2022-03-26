@@ -7,6 +7,6 @@ https://github.com/thenoiseinspace/password-generator
 <br>
 https://thenoiseinspace.github.io/password-generator
 
-Screenshot:
-<link href="./assets/screenshot.png"/>
+Screenshot (also in assets folder):
 https://github.com/thenoiseinspace/password-generator/blob/main/assets/screenshot.png?raw=true 
+<img src="https://github.com/thenoiseinspace/password-generator/blob/main/assets/screenshot.png?raw=true">

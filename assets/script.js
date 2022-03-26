@@ -15,9 +15,14 @@ function beginPasswordCreation(){
   passwordText.value = password; 
 }
 
+var totalCharacterBank = [];
+var resultPass = ""; 
+
+//I'm not sure why I need this twice but when I take it out it breaks.
+//I think this is probably the same issue I brought to office hours Friday morning. I still don't understand it. 
 function makePassword(){
-  var allChars=[];
-  var resultPass=""; 
+  var totalCharacterBank = [];
+  var resultPass = ""; 
 }
 
 //Asking user to choose parameters
@@ -28,23 +33,23 @@ if(passwordLength <8 || passwordLength > 128){
 }
   else{
     if(confirm("Should the password contain lower case letters?")){
-      Array.prototype.push.apply(allChars, lowercaseAlphabet)//differs
+      Array.prototype.push.apply(totalCharacterBank, [lowercaseAlphabet])
   }
   if(confirm("Should the password contain upper case letters?")){
-      Array.prototype.push.apply(allChars, uppercaseAlphabet)//differs
+      Array.prototype.push.apply(totalCharacterBank, [uppercaseAlphabet])
   }
   if(confirm("Should the password contain special characters?")){
-      Array.prototype.push.apply(allChars, symArr)//differs
+      Array.prototype.push.apply(totalCharacterBank, [symbols])
   }
   if(confirm("Should the password contain numbers?")){
-      Array.prototype.push.apply(allChars, numArr)//differs
+      Array.prototype.push.apply(totalCharacterBank, [numbers])
   }
 
   //Randomizing
   else{
     for(var i=0; i<passwordLength; i++){
-      var randomize = Math.floor(Math.random()*allChars.length);
-      resultPass += allChars[random]; 
+      var randomize = Math.floor(Math.random()*totalCharacterBank.length);
+      resultPass += totalCharacterBank[random]; 
     }
     //Result
     document.getElementById("password").innerHTML = resultPass; 
