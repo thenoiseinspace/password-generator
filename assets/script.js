@@ -4,6 +4,8 @@ var lowercaseAlphabet = "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s
 var uppercaseAlphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z"; 
 var numbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0";
 var symbols = "1, @, #, $, %, ^, &, *, (, ), _, ?. /, ;, :, <, >, [, ], {, },";
+var totalCharacterBank = [];
+var resultPassword = "";
 
 //Setting up the way the page looks when it loads
 window.onload = alert("Create a secure password! Click the button to begin, then select your parameters to generate your new password.");
@@ -13,16 +15,6 @@ function beginPasswordCreation(){
   var password = makePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password; 
-}
-
-var totalCharacterBank = [];
-var resultPass = ""; 
-
-//I'm not sure why I need this twice but when I take it out it breaks.
-//I think this is probably the same issue I brought to office hours Friday morning. I still don't understand it. 
-function makePassword(){
-  var totalCharacterBank = [];
-  var resultPass = ""; 
 }
 
 //Asking user to choose parameters
@@ -49,15 +41,19 @@ if(passwordLength <8 || passwordLength > 128){
   else{
     for(var i=0; i<passwordLength; i++){
       var randomize = Math.floor(Math.random()*totalCharacterBank.length);
-      resultPass += totalCharacterBank[random]; 
+      resultPassword += totalCharacterBank[random]; 
     }
     //Result
-    document.getElementById("password").innerHTML = resultPass; 
+    document.getElementById("password").innerHTML = resultPassword; 
   }
 }
 
-//Making it work on click
+function makePassword(){
+  var totalCharacterBank = [];
+  resultPassword = "";  
+}
 
+//Making it work on click
 generateBtn.addEventListener("click", beginPasswordCreation);
 
 //Calliing the function
