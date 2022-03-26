@@ -9,4 +9,4 @@ https://thenoiseinspace.github.io/password-generator
 
 Screenshot:
 <link href="./assets/screenshot.png"/>
-screenshot.png
+https://github.com/thenoiseinspace/password-generator/blob/main/assets/screenshot.png?raw=true 
